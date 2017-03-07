@@ -19,7 +19,6 @@ local.properties
 */.project
 **/dist/
 
-
 # Eclipse Core
 .project
 

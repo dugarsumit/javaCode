@@ -9,6 +9,40 @@
 	<url>http://maven.apache.org</url>
 	<build>
 		<finalName>SpringMvc</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.4</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<configuration>
+							<tasks>
+								<property file="${user.dir}/user.properties" />
+								<echo message="+---------------------------------------------------+" />
+								<echo message="    deleteing war from ${tomcat.webapp.home}" />
+								<echo message="+---------------------------------------------------+" />
+								<delete includeEmptyDirs="true" failonerror="false">
+									<fileset dir="${tomcat.webapp.home}" />
+								</delete>
+								<echo message="+---------------------------------------------------+" />
+								<echo message="    copying war to tomcat server" />
+								<echo message="	   from ${project.build.directory}/SpringMvc" />
+								<echo message="+---------------------------------------------------+" />
+								<copy todir="${tomcat.webapp.home}" overwrite="true">
+									<fileset dir="${project.build.directory}/SpringMvc">
+										<include name="**/*"/>
+									</fileset>
+								</copy>
+							</tasks>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 	</build>
 	<properties>
 		<spring.version>4.3.1.RELEASE</spring.version>
