@@ -18,6 +18,7 @@ local.properties
 */.settings/
 */.project
 **/dist/
+user.properties
 
 # Eclipse Core
 .project
