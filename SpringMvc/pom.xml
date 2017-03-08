@@ -31,7 +31,7 @@
 								<echo message="+---------------------------------------------------+" />
 								<copy todir="${tomcat.webapp.home}" overwrite="true">
 									<fileset dir="${project.build.directory}/SpringMvc">
-										<include name="**/*"/>
+										<include name="**/*" />
 									</fileset>
 								</copy>
 							</tasks>
@@ -45,7 +45,8 @@
 		</plugins>
 	</build>
 	<properties>
-		<spring.version>4.3.1.RELEASE</spring.version>
+		<spring.version>4.3.4.RELEASE</spring.version>
+		<hibernate.version>5.2.8.Final</hibernate.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -77,6 +78,42 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.41</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.8.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.8.1</version>
 		</dependency>
 	</dependencies>
 </project>

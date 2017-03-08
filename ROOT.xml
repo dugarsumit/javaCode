@@ -1,0 +1,9 @@
+<!-- Put this file in {tomcat.home}/conf/Catalina/server.development.com -->
+
+<Context path="/">
+
+    <Resource name="jdbc/SnapdealDS" auth="Container" type="javax.sql.DataSource" maxActive="100" maxIdle="20" maxWait="15000" username="root" password="snapdeal" driverClassName="com.mysql.jdbc.Driver" removeAbandoned="true" removeAbandonedTimeout="30" url="jdbc:mysql://server.development.com:3306/snapdeal?autoReconnect=true"/>
+
+	<Resource name="jdbc/sumitDataStore" auth="Container" type="javax.sql.DataSource" maxActive="100" maxIdle="20" maxWait="15000" username="root" password="warriorclan" driverClassName="com.mysql.jdbc.Driver" removeAbandoned="true" removeAbandonedTimeout="30" url="jdbc:mysql://localhost:3306/sumit?autoReconnect=true"/>
+
+</Context>

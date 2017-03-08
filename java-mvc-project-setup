@@ -1,0 +1,29 @@
+Steps to setup the webapp :
+
+1) Install java : 
+	- copy jdk to the prefrred location (http://www.wikihow.com/Install-Oracle-Java-JDK-on-Ubuntu-Linux)
+	- add JAVA_HOME in .bashrc file 
+	- complie .bashrc
+
+2) Install maven :
+	- copy maven to a preferred location
+	- add M2_HOME in .bashrc file
+	- complie .bashrc
+
+
+3) mysql server :
+	mysql -p -u root -h localhost
+	service mysql start
+	service mysql stop
+	service mysql restart
+
+4) Setup webserver : Tomcat
+
+5) Creating webapp
+	- create a maven project with apache webapp archtype
+
+6) Setting up remote debugger :
+	- add this in catalina.sh 
+		CATALINA_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n"
+
+7) user.properties is for specying path to tomcat home directory
