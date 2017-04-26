@@ -12,7 +12,7 @@ Steps to setup the webapp :
 
 
 3) mysql server :
-	mysql -p -u root -h localhost
+	mysql -p warriorclan -u root -h localhost
 	service mysql start
 	service mysql stop
 	service mysql restart
@@ -27,3 +27,5 @@ Steps to setup the webapp :
 		CATALINA_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n"
 
 7) user.properties is for specying path to tomcat home directory
+
+8) ROOT.xml : put this at con/Catalina/localhost of tomcat
