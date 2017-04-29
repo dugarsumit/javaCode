@@ -1,27 +1,21 @@
-
-
 public class Node implements Comparable<Node> {
 	private String word;
-	private Integer occurence;
+	private Integer occurrence;
 	private Node leftNode;
 	private Node rightNode;
 
-	public Node(){
-		
-	}
-	
-	public Node(Node node){
+	public Node(Node node) {
 		this.word = node.getWord();
-		this.occurence = node.getOccurence();
+		this.occurrence = node.getOccurrence();
 		this.leftNode = node.getLeftNode();
 		this.rightNode = node.getRightNode();
 	}
-	
-	public Node(String word,Integer occurance){
+
+	public Node(String word, Integer occurance) {
 		this.word = word;
-		this.occurence = occurance;
+		this.occurrence = occurance;
 	}
-	
+
 	public String getWord() {
 		return word;
 	}
@@ -30,12 +24,12 @@ public class Node implements Comparable<Node> {
 		this.word = word;
 	}
 
-	public Integer getOccurence() {
-		return occurence;
+	public Integer getOccurrence() {
+		return occurrence;
 	}
 
-	public void setOccurence(Integer occurence) {
-		this.occurence = occurence;
+	public void setOccurrence(Integer occurence) {
+		this.occurrence = occurence;
 	}
 
 	public Node getLeftNode() {
@@ -55,9 +49,9 @@ public class Node implements Comparable<Node> {
 	}
 
 	public int compareTo(Node n) {
-		if (occurence == n.occurence)
+		if (occurrence == n.getOccurrence())
 			return 0;
-		else if (occurence > n.occurence)
+		else if (occurrence > n.getOccurrence())
 			return 1;
 		else
 			return -1;
@@ -65,14 +59,17 @@ public class Node implements Comparable<Node> {
 
 	@Override
 	public String toString() {
-		return "Node [word=" + word + ", occurence=" + occurence
-				+ ", leftNode=" + leftNode + ", rightNode=" + rightNode + "]";
+		String leftNodeStr = "NULL";
+		String rightNodeStr = "NULL";
+		if (leftNode != null) {
+			leftNodeStr = "{word=" + leftNode.getWord() + " occurrence="
+					+ leftNode.getOccurrence() + "}";
+		}
+		if (rightNode != null) {
+			rightNodeStr = "{word=" + rightNode.getWord() + " occurrence="
+					+ rightNode.getOccurrence() + "}";
+		}
+		return "[word=" + word + ", occurrence=" + occurrence + ", leftNode="
+				+ leftNodeStr + ", rightNode=" + rightNodeStr + "]";
 	}
-
-//	@Override
-//	public String toString() {
-//		return "["+occurence+","+leftNode+","+rightNode+"]";
-//	}
-
-	
 }
