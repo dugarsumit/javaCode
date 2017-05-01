@@ -38,6 +38,10 @@ public class Task2 {
 		BFS();
 	}
 
+	/**
+	 * This is just for printing the final tree.
+	 * "-" represents an empty node.
+	 */
 	public static void BFS() {
 		Queue<Node> queue = new LinkedList<Node>();
 		queue.add(root);
@@ -64,12 +68,13 @@ public class Task2 {
 	}
 
 	/**
-	 * Algorith : 1) keep reading from the nodes list until there are nodes in
-	 * it. 2) sort the list in ascending order. 3) pick two nodes with the least
-	 * occurrence value. If only one node left then make this node as the root
-	 * of the tree, otherwise combine the two nodes and generate a parent. 4)
-	 * remove the above two nodes from the nodes list and add the parent node to
-	 * the list. 5) go to step 1
+	 * Algorithm : 
+	 * 1) keep reading from the nodes list until there are nodes in it. 
+	 * 2) sort the list in ascending order. 
+	 * 3) pick two nodes with the least occurrence value. If only one node left then make this node as the root
+	 * 	  of the tree, otherwise combine the two nodes and generate a parent. 
+	 * 4) remove the above two nodes from the nodes list and add the parent node to the list. 
+	 * 5) go to step 1
 	 */
 	public static void generateTree() {
 		while (!nodes.isEmpty()) {
@@ -110,8 +115,9 @@ public class Task2 {
 	}
 
 	/**
-	 * 1) reads the input data file line by line 2) extracts words from each
-	 * line 3) creates a map of words and their occurrences
+	 * 1) reads the input data file line by line 
+	 * 2) extracts words from each line 
+	 * 3) creates a map of words and their occurrences
 	 */
 	public static void readFile() {
 		BufferedReader bufferedReader = null;
