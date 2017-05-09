@@ -1,3 +1,4 @@
+package com.sumit;
 import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.List;
@@ -103,20 +104,20 @@ public class OptimizedSieve extends Strategy{
 		if (a == primes[mid]) {
 			return mid;
 		} else if (a < primes[mid]) {
-			if (a > primes[first] && a < primes[mid - 1]) {
+			if (a >= primes[first] && a <= primes[mid - 1]) {
 				return binarySearch(a, first, mid-1);
 			} else if (a < primes[first]) {
 				return first;
 			} else {
-				return last;
+				return mid;
 			}
 		} else {
-			if (a < primes[last] && a > primes[mid + 1]) {
+			if (a <= primes[last] && a >= primes[mid + 1]) {
 				return binarySearch(a, mid + 1, last);
 			} else if (a > primes[last]) {
 				return last;
 			} else {
-				return first;
+				return mid;
 			}
 		}
 	}

@@ -1,3 +1,4 @@
+package com.sumit;
 import java.util.List;
 
 
@@ -8,7 +9,7 @@ public abstract class Strategy {
 	 * generated. This application is tested for
 	 * MAX_RANGE = 100001
 	 */
-	final static int MAX_RANGE = 100001;
+	public final static int MAX_RANGE = 100001;
 	
 	/**
 	 * Every generator should implement it's own prime

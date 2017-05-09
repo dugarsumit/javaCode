@@ -1,0 +1,9 @@
+For loading custom jar to maven repository
+	mvn install:install-file -Dfile=/home/sumit/Desktop/primeEngine.jar -DgroupId=com.sumit -DartifactId=primeEngine -Dversion=1.0 -Dpackaging=jar
+
+pom entry
+	<dependency>
+	    <groupId>com.sumit</groupId>
+	    <artifactId>primeEngine</artifactId>
+	    <version>1.0</version>
+	</dependency>
